@@ -18,12 +18,14 @@ const Park = function(enclosure){
     }
   };
 
-  Park.prototype.moreThanTwoOffspring = function(dinosaur){
+  Park.prototype.moreThanTwoOffspring = function(){
+    let tempArray = [];
     for(let dinosaur of this.enclosure){
-      if(dinosaur.offspring <= 2){
-        this.enclosure.splice(dinosaur, 1)
+      if(dinosaur.offspring >= 3){
+        tempArray.push(dinosaur);
       }
     }
+    return tempArray;
   };
 
 module.exports = Park;

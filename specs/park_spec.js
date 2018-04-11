@@ -29,13 +29,12 @@ describe('Park', function(){
     assert.deepStrictEqual(result, 1);
   });
 
-  xit('Return dinosaurs with more than two offspring', function(){
+  it('Return dinosaurs with more than two offspring', function(){
     park.addDinosaur('Tyrannosaurus Rex', 3);
     park.addDinosaur('Tyrannosaurus Rex', 5);
     park.addDinosaur('Tyrannosaurus Rex', 1);
-    park.moreThanTwoOffspring('Tyrannosaurus Rex');
-    const result = park.enclosure.length;
-    assert.deepStrictEqual(result, 2);
+    const result = park.moreThanTwoOffspring();
+    assert.strictEqual(result.length, 2);
   });
 
 
